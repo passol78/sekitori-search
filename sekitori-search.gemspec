@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{SUMO Sekitori Search Client.}
   spec.description   = %q{SUMO Sekitori Search Client.}
-  spec.homepage      = "https://github.com/passol78/sekitori_search"
+  spec.homepage      = "https://github.com/passol78/sekitori-search"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
