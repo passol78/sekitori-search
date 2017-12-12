@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 #coding: utf-8
 
+require 'pp'
 require 'thor'
 require 'launchy'
 require 'sekitori/search/operator'
@@ -12,12 +13,12 @@ class SekitoriSearcher < Thor
   option :detail, aliases: ["-d"], type: :boolean
   option :all, aliases: ["-a"], type: :boolean
   def search word
-    operator = RikishiSearchOperator.new
+    operator = Sekitori::Search::Operator.new
     if options[:detail]
       result = options[:all] ? operator.rikishi_detail_search_from(word) : operator.sekitori_detail_search_from(word)
       Launchy.open(result) if result
     else
-      puts options[:all] ? operator.rikishi_search_from(word) : operator.sekitori_search_from(word)
+      pp options[:all] ? operator.rikishi_search_from(word) : operator.sekitori_search_from(word)
     end
   end
 end
