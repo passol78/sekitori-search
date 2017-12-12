@@ -1,0 +1,7 @@
+require 'sekitori/generators/yokozuna_list_generator'
+require 'sekitori/generators/oozeki_list_generator'
+require 'sekitori/generators/sekiwake_list_generator'
+require 'sekitori/generators/komusubi_list_generator'
+require 'sekitori/generators/makuuchi_list_generator'
+require 'sekitori/generators/juryo_list_generator'
+require 'sekitori/generators/makushita_list_generator'

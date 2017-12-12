@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+#coding: utf-8
+
+require 'thor'
+require 'launchy'
+require 'sekitori/search/operator'
+
+class SekitoriSearcher < Thor
+
+  default_task :search
+  desc 'search [検索文字]', '力士を検索します'
+  option :detail, aliases: ["-d"], type: :boolean
+  option :all, aliases: ["-a"], type: :boolean
+  def search word
+    operator = RikishiSearchOperator.new
+    if options[:detail]
+      result = options[:all] ? operator.rikishi_detail_search_from(word) : operator.sekitori_detail_search_from(word)
+      Launchy.open(result) if result
+    else
+      puts options[:all] ? operator.rikishi_search_from(word) : operator.sekitori_search_from(word)
+    end
+  end
+end
+
+SekitoriSearcher.start(ARGV)
