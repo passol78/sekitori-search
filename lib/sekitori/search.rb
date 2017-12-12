@@ -1,4 +1,4 @@
-require "sekitori/search/version"
+require 'sekitori/search/version'
 
 module Sekitori
   module Search
